@@ -82,8 +82,8 @@ end
 
 
 # the raw Result instance
->=(m::Matcher, f::Applicable) = TransResult(m, f)
+<=(f::Applicable, m::Matcher) = TransResult(m, f)
 # interpolate multiple values (list or tuple)
->(m::Matcher, f::Applicable) = App(m, f)
+<(f::Applicable, m::Matcher) = App(m, f)
 # a single value
 |>(m::Matcher, f::Applicable) = Appl(m, f)
